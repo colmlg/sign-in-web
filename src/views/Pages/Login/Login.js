@@ -13,25 +13,30 @@ class Login extends Component {
             password: '',
         };
 
-        this.handleChange = this.handleChange.bind(this);
+        this.handleUsernameChange = this.handleUsernameChange.bind(this);
+        this.handlePasswordChange = this.handlePasswordChange.bind(this);
+
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChange(e) {
-        const { name, value } = e.target;
-        this.setState({ [name]: value });
+    handleUsernameChange(e) {
+        this.setState({ username: e.target.value });
+    }
+
+    handlePasswordChange(e) {
+        this.setState({password: e.target.value });
     }
 
 
     handleSubmit(e) {
         e.preventDefault();
         const { username, password } = this.state;
-        const { dispatch } = this.props;
         console.log(this.state);
-        console.log(dispatch);
         console.log("Im here!")
         if (username && password) {
-            loginService.login(username, password);
+            loginService.login(username, password).then(user => {
+                this.props.history.push('/');
+            });
         }
     }
 
@@ -53,7 +58,7 @@ class Login extends Component {
                             <i className="icon-user"></i>
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input type="text" placeholder="Username" autoComplete="username" onChange={this.handleChange}/>
+                        <Input type="text" placeholder="Username" autoComplete="username" onChange={this.handleUsernameChange}/>
                       </InputGroup>
                       <InputGroup className="mb-4">
                         <InputGroupAddon addonType="prepend">
@@ -61,11 +66,11 @@ class Login extends Component {
                             <i className="icon-lock"></i>
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input type="password" placeholder="Password" autoComplete="current-password" onChange={this.handleChange}/>
+                        <Input type="password" placeholder="Password" autoComplete="current-password" onChange={this.handlePasswordChange}/>
                       </InputGroup>
                       <Row>
                         <Col xs="6">
-                          <Button type="button" color="primary" className="px-4">Login</Button>
+                          <button  color="primary" className="px-4">Login</button>
                         </Col>
                         <Col xs="6" className="text-right">
                           <Button color="link" className="px-0">Forgot password?</Button>

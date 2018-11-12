@@ -12,7 +12,7 @@ function login(username, password) {
         body: JSON.stringify({ id: username, password: password })
     };
 
-    return fetch(`http://localhost:3000/login`, requestOptions).then(user => {
+    return fetch('http://localhost:3000/login', requestOptions).then(user => {
             // login successful if there's a jwt token in the response
             if (user.token) {
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
