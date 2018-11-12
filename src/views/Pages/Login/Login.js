@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Button, Card, CardBody, CardGroup, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
-import loginService from '../../../loginService';
+import loginService from '../../../services/loginService';
 class Login extends Component {
 
     constructor() {
         super();
-        // this.props.dispatch(loginService.logout);
+        loginService.logout();
 
 
         this.state = {
@@ -15,7 +15,6 @@ class Login extends Component {
 
         this.handleUsernameChange = this.handleUsernameChange.bind(this);
         this.handlePasswordChange = this.handlePasswordChange.bind(this);
-
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -27,14 +26,11 @@ class Login extends Component {
         this.setState({password: e.target.value });
     }
 
-
     handleSubmit(e) {
         e.preventDefault();
         const { username, password } = this.state;
-        console.log(this.state);
-        console.log("Im here!")
         if (username && password) {
-            loginService.login(username, password).then(user => {
+            loginService.login(username, password).then(() => {
                 this.props.history.push('/');
             });
         }

@@ -6,7 +6,7 @@ import './App.scss';
 import { DefaultLayout } from './containers';
 // Pages
 import { Login, Page404, Page500, Register } from './views/Pages';
-import {PrivateRoute} from "./PrivateRoute";
+import {PrivateRoute} from "./views/PrivateRoute";
 
 // import { renderRoutes } from 'react-router-config';
 
