@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Card, CardBody, CardGroup, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
+import { Button, Card, CardBody, CardGroup, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row, Alert } from 'reactstrap';
 import loginService from '../../../services/loginService';
 class Login extends Component {
 
@@ -11,6 +11,7 @@ class Login extends Component {
         this.state = {
             username: '',
             password: '',
+            errorMessage: ''
         };
 
         this.handleUsernameChange = this.handleUsernameChange.bind(this);
@@ -32,6 +33,8 @@ class Login extends Component {
         if (username && password) {
             loginService.login(username, password).then(() => {
                 this.props.history.push('/');
+            }).catch(error => {
+                this.setState({errorMessage: error});
             });
         }
     }
@@ -72,6 +75,11 @@ class Login extends Component {
                           <Button color="link" className="px-0">Forgot password?</Button>
                         </Col>
                       </Row>
+                        <Row>
+                            {this.state.errorMessage == '' ? null : <Alert className='alert-danger' style={{width: '100%'}}>
+                                    <p>{this.state.errorMessage}</p>
+                                </Alert> }
+                        </Row>
                     </Form>
                   </CardBody>
                 </Card>

@@ -11,7 +11,7 @@ import {
 import moduleService from '../services/moduleService';
 
 
-let navigation ={ items: [
+let navigation = { items: [
     {
         name: 'Dashboard',
         url: '/dashboard',
@@ -30,7 +30,7 @@ let navigation ={ items: [
         },
         class: ''             // optional class names space delimited list for title item ex: "text-center"
     }
-]}
+]};
 
 class Sidebar extends Component {
     constructor() {
@@ -47,7 +47,13 @@ class Sidebar extends Component {
                     name: module.id.toUpperCase(),
                     url: '/module/' + module.id,
                     icon: 'icon-book-open',
-                })
+                });
+            });
+
+            navigation.items.push({
+                name: 'Add a module',
+                url: '/module/new/',
+                icon: 'icon-plus',
             });
 
             this.setState({ navigation: navigation });
