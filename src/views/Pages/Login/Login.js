@@ -76,9 +76,11 @@ class Login extends Component {
                         </Col>
                       </Row>
                         <Row>
-                            {this.state.errorMessage == '' ? null : <Alert className='alert-danger' style={{width: '100%'}}>
-                                    <p>{this.state.errorMessage}</p>
-                                </Alert> }
+                            {this.state.errorMessage === '' ? null :
+                                <Alert className='alert-danger' style={{width: '100%'}}>
+                                    <p><span className="fa fa-warning fa-lg mt-4" /> {this.state.errorMessage}</p>
+                                </Alert>
+                            }
                         </Row>
                     </Form>
                   </CardBody>
