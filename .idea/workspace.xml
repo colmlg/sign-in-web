@@ -2,23 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="490485f2-6bde-494a-820e-fe6a458e1ebd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/PrivateRoute.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Sidebar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/authHeader.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/loginService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/Module/AddModuleForm/AddModuleForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/Module/AddModuleForm/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serviceWorker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/serviceWorker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/DefaultLayout/DefaultFooter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/DefaultLayout/DefaultFooter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Dashboard/Dashboard.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Icons/CoreUIIcons/CoreUIIcons.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Icons/CoreUIIcons/CoreUIIcons.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Icons/CoreUIIcons/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Icons/Flags/Flags.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Icons/Flags/Flags.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Icons/Flags/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Icons/FontAwesome/FontAwesome.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Icons/FontAwesome/FontAwesome.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Icons/FontAwesome/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Icons/SimpleLineIcons/SimpleLineIcons.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Icons/SimpleLineIcons/SimpleLineIcons.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Icons/SimpleLineIcons/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Icons/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Login/Login.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,18 +35,27 @@
     <session id="-2007326005">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
-          <entry key="project.open.time.1" value="1" />
+          <entry key="project.closed" value="5" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.1" value="2" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
-      <usages-collector id="statistics.vcs.git.usages" />
+      <usages-collector id="statistics.vcs.git.usages">
+        <counts>
+          <entry key="git.branch.checkout.remote" value="1" />
+        </counts>
+      </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JavaScript" value="15" />
+          <entry key="JSON" value="3" />
+          <entry key="JavaScript" value="45" />
           <entry key="PLAIN_TEXT" value="2" />
+          <entry key="SCSS" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -50,18 +63,23 @@
       <usages-collector id="statistics.spring.boot.run.usages" />
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="1073" />
-          <entry key="PLAIN_TEXT" value="23" />
+          <entry key="JSON" value="28" />
+          <entry key="JavaScript" value="2332" />
+          <entry key="PLAIN_TEXT" value="226" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="js" value="17" />
+          <entry key="js" value="47" />
+          <entry key="json" value="3" />
+          <entry key="scss" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="1096" />
+          <entry key="js" value="2355" />
+          <entry key="json" value="28" />
+          <entry key="txt" value="203" />
         </counts>
       </usages-collector>
     </session>
@@ -71,21 +89,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-                <element signature="e#195#261#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/views/Pages/Login/Login.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
+            <state relative-caret-position="120">
+              <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -94,10 +99,34 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/loginService.js">
+        <entry file="file://$PROJECT_DIR$/src/views/Module/AddModuleForm/AddModuleForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+            <state relative-caret-position="585">
+              <caret line="64" column="68" selection-start-line="64" selection-start-column="68" selection-end-line="64" selection-end-column="68" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/Base/Forms/Forms.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="489">
+              <caret line="93" column="32" lean-forward="true" selection-start-line="77" selection-start-column="20" selection-end-line="93" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/views/Pages/Login/Login.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="463">
+              <caret line="80" column="44" selection-start-line="80" selection-start-column="44" selection-end-line="80" selection-end-column="44" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -111,21 +140,43 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>warning</find>
+      <find>icons</find>
+      <find>Basuc</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/_nav.js" />
         <option value="$PROJECT_DIR$/src/containers/DefaultLayout/DefaultLayout.js" />
-        <option value="$PROJECT_DIR$/src/Sidebar.js" />
         <option value="$PROJECT_DIR$/src/userService.js" />
         <option value="$PROJECT_DIR$/src/userService1.js" />
         <option value="$PROJECT_DIR$/src/PrivateRoute.js" />
-        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/authHeader.js" />
         <option value="$PROJECT_DIR$/src/loginService.js" />
+        <option value="$PROJECT_DIR$/src/Sidebar.js" />
+        <option value="$PROJECT_DIR$/src/services/authHeader.js" />
+        <option value="$PROJECT_DIR$/src/services/moduleService.js" />
+        <option value="$PROJECT_DIR$/src/views/Sidebar.js" />
+        <option value="$PROJECT_DIR$/src/services/loginService.js" />
+        <option value="$PROJECT_DIR$/src/views/Module/Add/AddModuleForm.js" />
+        <option value="$PROJECT_DIR$/src/views/Module/Add/package.json" />
+        <option value="$PROJECT_DIR$/src/routes.js" />
+        <option value="$PROJECT_DIR$/src/views/Module/AddModuleForm/package.json" />
+        <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/containers/DefaultLayout/DefaultFooter.js" />
+        <option value="$PROJECT_DIR$/src/views/Module/AddModuleForm/AddModuleForm.js" />
         <option value="$PROJECT_DIR$/src/views/Pages/Login/Login.js" />
       </list>
     </option>
@@ -168,10 +219,7 @@
       <path value="$PROJECT_DIR$/src/views/Buttons/Buttons/package.json" />
       <path value="$PROJECT_DIR$/src/views/Charts/package.json" />
       <path value="$PROJECT_DIR$/src/views/Dashboard/package.json" />
-      <path value="$PROJECT_DIR$/src/views/Icons/CoreUIIcons/package.json" />
-      <path value="$PROJECT_DIR$/src/views/Icons/Flags/package.json" />
-      <path value="$PROJECT_DIR$/src/views/Icons/FontAwesome/package.json" />
-      <path value="$PROJECT_DIR$/src/views/Icons/SimpleLineIcons/package.json" />
+      <path value="$PROJECT_DIR$/src/views/Module/AddModuleForm/package.json" />
       <path value="$PROJECT_DIR$/src/views/Notifications/Alerts/package.json" />
       <path value="$PROJECT_DIR$/src/views/Notifications/Badges/package.json" />
       <path value="$PROJECT_DIR$/src/views/Notifications/Modals/package.json" />
@@ -186,7 +234,6 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="115" />
     <option name="y" value="23" />
     <option name="width" value="1920" />
     <option name="height" value="977" />
@@ -199,8 +246,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -213,20 +261,50 @@
               <item name="sign-in-web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="sign-in-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sign-in-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sign-in-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sign-in-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="Pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sign-in-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sign-in-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="Pages" type="462c0819:PsiDirectoryNode" />
+              <item name="Login" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542027683092" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542218904862" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/views" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/views/Module/Add" />
+      <recent name="$PROJECT_DIR$/src/views" />
+      <recent name="$PROJECT_DIR$/src/services" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -261,17 +339,44 @@
       <workItem from="1541968333251" duration="683000" />
       <workItem from="1542022683840" duration="4697000" />
       <workItem from="1542027857078" duration="47000" />
-      <workItem from="1542028161963" duration="214000" />
+      <workItem from="1542028161963" duration="506000" />
+      <workItem from="1542038810259" duration="4200000" />
+      <workItem from="1542212668710" duration="1027000" />
+      <workItem from="1542214035592" duration="732000" />
+      <workItem from="1542216231637" duration="2112000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial app setupˆ">
+      <created>1542028588940</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1542028588940</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Get modules from API working&#10;Login and authorization working">
+      <created>1542043884777</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1542043884777</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Show error message returned from API on login&#10;Added 'Add a module' button to sidebar">
+      <created>1542214731914</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1542214731914</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5641000" />
+    <option name="totallyTimeSpent" value="14004000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="977" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25772098" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26783812" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -289,8 +394,9 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Statistic" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3299435" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3299435" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3299435" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -308,6 +414,39 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial app setupˆ" />
+    <MESSAGE value="Get modules from API working&#10;Login and authorization working" />
+    <MESSAGE value="Show error message returned from API on login&#10;Added 'Add a module' button to sidebar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Show error message returned from API on login&#10;Added 'Add a module' button to sidebar" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/views/Pages/Login/Login.js</url>
+          <line>36</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/views/Pages/Login/Login.js</url>
+          <line>34</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/services/loginService.js</url>
+          <line>40</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/views/Module/AddModuleForm/AddModuleForm.js</url>
+          <line>111</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/node_modules/@coreui/react/es/Sidebar.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -321,11 +460,6 @@
         <state relative-caret-position="15">
           <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/Icons/CoreUIIcons/CoreUIIcons.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2092" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/Icons/SimpleLineIcons/SimpleLineIcons.js">
@@ -342,28 +476,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/authHeader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Sidebar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="41" column="43" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/DefaultLayout/DefaultLayout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PrivateRoute.js">
+    <entry file="file://$PROJECT_DIR$/src/views/PrivateRoute.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
@@ -377,28 +490,178 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
+    <entry file="file://$PROJECT_DIR$/src/views/Widgets/Widget03.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Widgets/Widget02.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Widgets/Widget01.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Sidebar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+        <state relative-caret-position="380">
+          <caret line="53" column="35" selection-start-line="53" selection-start-column="35" selection-end-line="53" selection-end-column="35" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-            <element signature="e#195#261#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/loginService.js">
+    <entry file="file://$PROJECT_DIR$/src/views/Icons/CoreUIIcons/CoreUIIcons.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/loginService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Icons/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Icons/FontAwesome/FontAwesome.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27735">
+          <caret line="1849" column="16" lean-forward="true" selection-start-line="1849" selection-start-column="16" selection-end-line="1849" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/moduleService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/authHeader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Base/Forms/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Dashboard/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Module/AddModuleForm/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Dashboard/Dashboard.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="54" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/serviceWorker.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/setupTests.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/polyfill.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/DefaultLayout/DefaultFooter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="17" column="38" lean-forward="true" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/DefaultLayout/DefaultLayout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="54" column="16" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/DefaultLayout/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Base/Forms/Forms.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="489">
+          <caret line="93" column="32" lean-forward="true" selection-start-line="77" selection-start-column="20" selection-end-line="93" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Module/AddModuleForm/AddModuleForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="64" column="68" selection-start-line="64" selection-start-column="68" selection-end-line="64" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/Pages/Login/Login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
+        <state relative-caret-position="463">
+          <caret line="80" column="44" selection-start-line="80" selection-start-column="44" selection-end-line="80" selection-end-column="44" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>

@@ -8,8 +8,10 @@ import {
     AppSidebarNav
 } from "@coreui/react";
 
+import moduleService from '../services/moduleService';
 
-let navigation ={ items: [
+
+let navigation = { items: [
     {
         name: 'Dashboard',
         url: '/dashboard',
@@ -28,7 +30,7 @@ let navigation ={ items: [
         },
         class: ''             // optional class names space delimited list for title item ex: "text-center"
     }
-]}
+]};
 
 class Sidebar extends Component {
     constructor() {
@@ -39,21 +41,23 @@ class Sidebar extends Component {
     }
 
     componentDidMount() {
-        fetch("http://localhost:3000/module").then(results => {
-            return results.json();
-        }).then(modules => {
+        moduleService.getModules().then(modules => {
             modules.forEach(module => {
                 navigation.items.push({
                     name: module.id.toUpperCase(),
                     url: '/module/' + module.id,
                     icon: 'icon-book-open',
-                })
+                });
+            });
+
+            navigation.items.push({
+                name: 'Add a module',
+                url: '/module/new/',
+                icon: 'icon-plus',
             });
 
             this.setState({ navigation: navigation });
-        }).catch(error => {
-            console.log(error);
-        })
+        });
     }
 
     render() {
