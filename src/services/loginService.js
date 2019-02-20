@@ -1,4 +1,5 @@
 //http://jasonwatmore.com/post/2017/12/07/react-redux-jwt-authentication-tutorial-example
+import constants from '../Constants';
 
 const loginService = {
     login,
@@ -13,7 +14,7 @@ function login(username, password) {
         body: JSON.stringify({ id: username, password: password })
     };
 
-    return fetch('http://localhost:3000/login', requestOptions)
+    return fetch(constants.BACKEND_URL + '/login', requestOptions)
         .then(handleResponse).then(user => {
             if (user.token) {
                 // store user details and jwt token in local storage to keep user logged in between page refreshes

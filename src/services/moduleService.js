@@ -1,5 +1,6 @@
 import authHeader from './authHeader';
 import loginService from './loginService';
+import constants from '../Constants';
 
 const moduleService = {
     getModules
@@ -11,7 +12,7 @@ function getModules() {
         headers: authHeader()
     };
 
-    return fetch("http://localhost:3000/module", requestOptions).then(handleResponse)
+    return fetch(constants.BACKEND_URL + "/module", requestOptions).then(handleResponse)
 }
 
 function handleResponse(response) {
