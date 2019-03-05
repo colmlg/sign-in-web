@@ -21,6 +21,7 @@
     "chart.js": "^2.7.3",
     "classnames": "^2.2.6",
     "core-js": "^2.5.7",
+    "dateformat": "^3.0.3",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
     "flag-icon-css": "^3.2.1",
