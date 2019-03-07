@@ -90,9 +90,8 @@ class Login extends Component {
                   <CardBody className="text-center">
                     <div>
                       <h2>Sign up</h2>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua.</p>
-                      <Button color="primary" className="mt-3" active>Register Now!</Button>
+                      <p>Don't have an account? Sign up today!</p>
+                      <Button color="primary" className="mt-3" active onClick={() => this.props.history.push('/register')}>Register Now!</Button>
                     </div>
                   </CardBody>
                 </Card>
