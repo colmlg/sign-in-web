@@ -1,8 +1,10 @@
 import authHeader from './authHeader';
 import loginService from './loginService';
+import constants from '../Constants';
 
 const moduleService = {
-    getModules
+    getModules,
+    addModule
 };
 
 function getModules() {
@@ -11,7 +13,18 @@ function getModules() {
         headers: authHeader()
     };
 
-    return fetch("http://localhost:3000/module", requestOptions).then(handleResponse)
+    return fetch(constants.BACKEND_URL + "/module", requestOptions).then(handleResponse)
+}
+
+function addModule(module) {
+    const requestOptions = {
+        method: "POST",
+        headers: authHeader(),
+        body: JSON.stringify(module)
+    };
+
+    return fetch(constants.BACKEND_URL + '/module', requestOptions)
+        .then(handleResponse);
 }
 
 function handleResponse(response) {

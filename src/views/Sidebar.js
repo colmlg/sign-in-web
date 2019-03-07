@@ -47,6 +47,7 @@ class Sidebar extends Component {
                     name: module.id.toUpperCase(),
                     url: '/module/' + module.id,
                     icon: 'icon-book-open',
+                    moduleId: module.id
                 });
             });
 
