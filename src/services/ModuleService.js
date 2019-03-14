@@ -1,19 +1,28 @@
-import authHeader from './authHeader';
-import loginService from './loginService';
+import authHeader from './AuthHeader';
+import loginService from './LoginService';
 import constants from '../Constants';
 
 const moduleService = {
-    getModules,
-    addModule
+    getMyModules,
+    addModule,
+    getModule,
 };
 
-function getModules() {
+function getMyModules() {
     const requestOptions = {
         method: 'GET',
         headers: authHeader()
     };
 
     return fetch(constants.BACKEND_URL + "/module", requestOptions).then(handleResponse)
+}
+function getModule(id) {
+    const requestOptions = {
+        method: 'GET',
+        headers: authHeader()
+    };
+
+    return fetch(constants.BACKEND_URL + "/module/" + id, requestOptions).then(handleResponse)
 }
 
 function addModule(module) {

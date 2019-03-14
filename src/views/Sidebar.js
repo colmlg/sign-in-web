@@ -8,7 +8,7 @@ import {
     AppSidebarNav
 } from "@coreui/react";
 
-import moduleService from '../services/moduleService';
+import moduleService from '../services/ModuleService';
 
 
 let navigation = { items: [
@@ -41,7 +41,7 @@ class Sidebar extends Component {
     }
 
     componentDidMount() {
-        moduleService.getModules().then(modules => {
+        moduleService.getMyModules().then(modules => {
             modules.forEach(module => {
                 navigation.items.push({
                     name: module.id.toUpperCase(),

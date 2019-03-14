@@ -18,7 +18,7 @@ const AddModule = Loadable({
 });
 
 const ModuleDetails = Loadable({
-    loader: () => import('./views/Module/AddModuleForm'),
+    loader: () => import('./views/Module/ModuleDetails'),
     loading: Loading,
 });
 

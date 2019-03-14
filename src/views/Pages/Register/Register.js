@@ -14,7 +14,7 @@ import {
     Row
 } from 'reactstrap';
 
-import loginService from '../../../services/loginService';
+import loginService from '../../../services/LoginService';
 
 class Register extends Component {
 
