@@ -13,8 +13,7 @@ class ModuleDetails extends Component {
         super(props);
         this.createTableHeader = this.createTableHeader.bind(this);
         this.createTableRows = this.createTableRows.bind(this);
-        this.getModuleAttendance = this.getModuleAttendance.bind(this);
-        this.getModules = this.getModules.bind(this);
+
         this.state = {
             lessons: [],
             module: {
@@ -25,19 +24,22 @@ class ModuleDetails extends Component {
     }
 
     componentWillMount(){
-        this.getModules();
+        this.getModules(this.state.moduleId);
     }
 
     componentWillReceiveProps(nextProps) {
-        this.setState({moduleId: nextProps.match.params.id});
-        this.getModules();
+        this.getModules(nextProps.match.params.id);
     }
 
-    getModules() {
-        ModuleService.getModule(this.state.moduleId).then(module => {
+    getModules(id) {
+        ModuleService.getModule(id).then(module => {
             const today = new Date();
             module.lessons = module.lessons.filter(lesson => new Date(lesson.date) <= today);
-            this.setState(module);
+            this.setState({
+                moduleId: id,
+                module: module.module,
+                lessons: module.lessons,
+            });
         }).catch(error => {
             alert(error);
         });
@@ -53,7 +55,7 @@ class ModuleDetails extends Component {
         return this.state.module.students.map(student => {
             return <tr>
                 <td>{student}</td>
-                <td>{this.calculateAttendance(student)}</td>
+                {this.calculateAttendance(student)}
                 {this.getModuleAttendance(student)}
             </tr>
         })
@@ -61,12 +63,25 @@ class ModuleDetails extends Component {
 
     getModuleAttendance(student) {
         return this.state.lessons.map(lesson => {
-            return <td>{lesson.studentsAttended.indexOf(student) === -1 ? "X" : "X"}</td>
+            return <td>{lesson.studentsAttended.indexOf(student) === -1 ? "" : "X"}</td>
         })
     }
 
     calculateAttendance(student) {
-        return "100%";
+        const totalLessons = this.state.lessons.length;
+        const lessonsAttended = this.state.lessons.filter(lesson => lesson.studentsAttended.indexOf(student) !== -1).length;
+        const percentage = ((lessonsAttended / totalLessons) * 100.0).toFixed(0);
+
+        let color;
+        if(percentage >= 80) {
+            color = "table-success";
+        } else if(percentage >= 50) {
+            color = "table-success";
+        } else {
+            color = "table-danger";
+        }
+
+        return <td class={color}>{percentage + "%"}</td>;
     }
 
     render() {
@@ -76,17 +91,16 @@ class ModuleDetails extends Component {
                     <strong>{this.state.moduleId}</strong>
                 </CardHeader>
                 <CardBody>
-                    <Table responsive striped bordered hover size="sm">
+                    <Table responsive striped hover bordered size="sm">
                         <thead>
                         <tr>
                             <th>Student</th>
                             <th>Attendance</th>
                             {this.createTableHeader()}
                         </tr>
-                        {this.createTableRows()}
                         </thead>
                         <tbody>
-
+                            {this.createTableRows()}
                         </tbody>
                     </Table>
                 </CardBody>
