@@ -5,7 +5,6 @@ import {
 } from 'reactstrap';
 import dateFormat from 'dateformat';
 import ModuleService from '../../../services/ModuleService';
-import AddModuleForm from "../AddModuleForm";
 
 class ModuleDetails extends Component {
 
