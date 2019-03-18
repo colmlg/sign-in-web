@@ -1,26 +1,15 @@
 import React, {Component} from 'react';
 import {
-    Badge,
     Button,
-    ButtonDropdown,
     Card,
     CardBody,
     CardFooter,
     CardHeader,
     Col,
-    Collapse,
-    DropdownItem,
-    DropdownMenu,
-    DropdownToggle,
-    Fade,
     Form,
     FormGroup,
     FormText,
-    FormFeedback,
     Input,
-    InputGroup,
-    InputGroupAddon,
-    InputGroupText,
     Label,
     Row,
 } from 'reactstrap';
@@ -28,7 +17,7 @@ import {
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 
-import moduleService from '../../../services/moduleService';
+import moduleService from '../../../services/ModuleService';
 import dateFormat from 'dateformat';
 
 
@@ -156,7 +145,7 @@ class AddModuleForm extends Component {
                                                    placeholder="e.g. CS4005B" onChange={this.handleChange}/>
                                             <FormText color="muted">Please enter the room number</FormText>
                                         </Col>
-                                    </FormGroup>
+                                    </FormGroup>n
                                 </Form>
                             </CardBody>
                             <CardFooter>
