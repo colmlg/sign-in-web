@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
-import {Badge, Button, DropdownItem, DropdownMenu, DropdownToggle, Nav, NavItem, NavLink} from 'reactstrap';
+import {Button, Nav, NavItem} from 'reactstrap';
 import PropTypes from 'prop-types';
 
-import { AppAsideToggler, AppHeaderDropdown, AppNavbarBrand, AppSidebarToggler } from '@coreui/react';
+import { AppNavbarBrand, AppSidebarToggler } from '@coreui/react';
 import logo from '../../assets/img/brand/logo_green_final.png'
 import sygnet from '../../assets/img/brand/sygnet.svg'
 import LoginService from '../../services/LoginService';
-import Login from "../../views/Pages/Login";
 
 const propTypes = {
     children: PropTypes.node,
@@ -16,16 +15,7 @@ const defaultProps = {};
 
 class DefaultHeader extends Component {
 
-    logout() {
-        LoginService.logout();
-        window.location.reload(true);
-    }
-
     render() {
-
-        // eslint-disable-next-line
-        const {children, ...attributes} = this.props;
-
         return (
             <React.Fragment>
                 <AppSidebarToggler className="d-lg-none" display="md" mobile/>
@@ -40,7 +30,10 @@ class DefaultHeader extends Component {
                 </Nav>
                 <Nav className="ml-auto" navbar>
                     <NavItem className="d-md-down-none">
-                        <Button onClick={() => this.logout()} size="sm" color="primary">Log Out</Button>
+                        <Button onClick={() => {
+                            LoginService.logout();
+                            window.location.reload(true);
+                        }} size="sm" color="primary">Log Out</Button>
                     </NavItem>
                 </Nav>
             </React.Fragment>

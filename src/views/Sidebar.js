@@ -16,10 +16,6 @@ let navigation = { items: [
         name: 'Dashboard',
         url: '/dashboard',
         icon: 'icon-speedometer',
-        // badge: {
-        //   variant: 'info',
-        //   text: 'NEW',
-        // },
     },
     {
         title: true,
@@ -49,12 +45,6 @@ class Sidebar extends Component {
                     icon: 'icon-book-open',
                     moduleId: module.id
                 });
-            });
-
-            navigation.items.push({
-                name: 'Add a module',
-                url: '/module/new/',
-                icon: 'icon-plus',
             });
 
             this.setState({ navigation: navigation });
