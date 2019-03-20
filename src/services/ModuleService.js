@@ -4,7 +4,6 @@ import constants from '../Constants';
 
 const moduleService = {
     getMyModules,
-    addModule,
     getModule,
 };
 
@@ -23,17 +22,6 @@ function getModule(id) {
     };
 
     return fetch(constants.BACKEND_URL + "/module/" + id, requestOptions).then(handleResponse)
-}
-
-function addModule(module) {
-    const requestOptions = {
-        method: "POST",
-        headers: authHeader(),
-        body: JSON.stringify(module)
-    };
-
-    return fetch(constants.BACKEND_URL + '/module', requestOptions)
-        .then(handleResponse);
 }
 
 function handleResponse(response) {

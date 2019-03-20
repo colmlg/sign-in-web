@@ -72,10 +72,10 @@ class ModuleDetails extends Component {
         const percentage = ((lessonsAttended / totalLessons) * 100.0).toFixed(0);
 
         let color;
-        if(percentage >= 80) {
+        if(percentage >= 75) {
             color = "table-success";
         } else if(percentage >= 50) {
-            color = "table-success";
+            color = "table-warning";
         } else {
             color = "table-danger";
         }
