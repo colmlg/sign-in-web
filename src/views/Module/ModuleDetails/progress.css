@@ -1,11 +1,23 @@
 .CircularProgressbar.module-details {
-    /*
-     * This fixes an issue where the CircularProgressbar svg has
-     * 0 width inside a "display: flex" container, and thus not visible.
-     *
-     * If you're not using "display: flex", you can remove this style.
-     */
     height: 150px;
     padding-bottom: 5px;
 
+}
+
+.CircularProgressbar.success .CircularProgressbar-path      { stroke: green; }
+.CircularProgressbar.success .CircularProgressbar-text      { fill: green; }
+
+.CircularProgressbar.warning .CircularProgressbar-path      { stroke: #ffc107; }
+.CircularProgressbar.warning .CircularProgressbar-text      { fill: #ffc107; }
+
+.CircularProgressbar.danger .CircularProgressbar-path      { stroke: #f86c6b; }
+.CircularProgressbar.danger .CircularProgressbar-text      { fill: #f86c6b; }
+
+
+h5 {
+    text-align: center;
+}
+
+table{
+    text-align: center;
 }
