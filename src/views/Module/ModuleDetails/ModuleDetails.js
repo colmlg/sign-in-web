@@ -52,15 +52,15 @@ class ModuleDetails extends Component {
 
     createTableHeader() {
         let header = [];
-        if(this.state.attendance.overallLec) {
+        if(this.state.attendance.overallLec !== undefined) {
             header.push(<th>{"Lectures"}</th>);
         }
 
-        if(this.state.attendance.overallLab) {
+        if(this.state.attendance.overallLab !== undefined) {
             header.push(<th>{"Labs"}</th>);
         }
 
-        if(this.state.attendance.overallTut) {
+        if(this.state.attendance.overallTut !== undefined) {
             header.push(<th>{"Tutorials"}</th>);
         }
         header = header.concat(this.state.lessons.map(lesson => {
@@ -90,21 +90,21 @@ class ModuleDetails extends Component {
         const cells = [];
         let counter = 0;
         let sum = 0;
-        if(this.state.attendance.overallLec) {
+        if(this.state.attendance.overallLec !== undefined) {
             const studentLec = this.state.attendance.lecStudent.find(s => s.id === student).attendance;
             cells.push(this.getPercentageCell(studentLec));
             sum += studentLec;
             counter++;
         }
 
-        if(this.state.attendance.overallLab) {
+        if(this.state.attendance.overallLab !== undefined) {
             const studentLab = this.state.attendance.labStudent.find(s => s.id === student).attendance;
             cells.push(this.getPercentageCell(studentLab));
             sum += studentLab;
             counter++;
         }
 
-        if(this.state.attendance.overallTut) {
+        if(this.state.attendance.overallTut !== undefined) {
             const studentTut = this.state.attendance.tutStudent.find(s => s.id === student).attendance;
             cells.push(this.getPercentageCell(studentTut));
             sum += studentTut;
