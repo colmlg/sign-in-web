@@ -5,7 +5,7 @@ import dateFormat from 'dateformat';
 import ModuleService from '../../../services/ModuleService';
 import 'react-circular-progressbar/dist/styles.css';
 import './progress.css';
-import moment from 'moment';
+import AttendanceCalculator from '../../../services/AttendanceCalculator';
 
 class ModuleDetails extends Component {
 
@@ -37,7 +37,7 @@ class ModuleDetails extends Component {
         ModuleService.getModule(id).then(response => {
             const today = new Date();
             response.lessons = response.lessons.filter(lesson => new Date(lesson.date) <= today);
-            const attendance = this.calculateOverallModuleAttendance(response.module.students, response.lessons);
+            const attendance = AttendanceCalculator.calculateOverallModuleAttendance(response.module.students, response.lessons);
 
             this.setState({
                 moduleId: id,
@@ -71,13 +71,25 @@ class ModuleDetails extends Component {
     }
 
     createTableRows() {
-        return this.state.students.map(student => {
+        const studentRows = this.state.students.map(student => {
             return <tr>
                 <td>{student}</td>
                 {this.getOverallAttendance(student)}
                 {this.getLessonAttendance(student)}
             </tr>
         });
+
+        const lessonRow = <tr>
+            <th scope="row">Total</th>
+            {this.getPercentageCell(this.state.attendance.overall)}
+            {this.getPercentageCell(this.state.attendance.overallLec)}
+            {this.getPercentageCell(this.state.attendance.overallLab)}
+            {this.getPercentageCell(this.state.attendance.overallTut)}
+            {this.state.lessons.map(l => <td>{l.studentsAttended.length}</td>)}
+        </tr>;
+
+        return [lessonRow, studentRows];
+
     }
 
     getLessonAttendance(student) {
@@ -118,116 +130,11 @@ class ModuleDetails extends Component {
     }
 
     getPercentageCell(percentage) {
+        if(percentage === undefined) {
+            return <td>-</td>;
+        }
+
         return <td className={`table-${this.getColorClassName(percentage)}`}>{percentage.toFixed(0) + "%"}</td>;
-    }
-
-    calculateOverallModuleAttendance(students, lessons) {
-        let attendance = {};
-
-        const lectures = lessons.filter(l => l.type === 'LEC');
-        if(lectures.length > 0) {
-            const lectureAttendance = this.calculateLectureAttendance(students, lectures);
-            attendance.overallLec = lectureAttendance.overall;
-            attendance.lecStudent = lectureAttendance.perStudent;
-        }
-
-
-        const labs = lessons.filter(l => l.type === 'LAB');
-        if(labs.length > 0) {
-            const labAttendance = this.calculateLabAndTutAttendance(students, labs);
-            attendance.overallLab = labAttendance.overall;
-            attendance.labStudent = labAttendance.perStudent;
-        }
-
-
-        const tuts = lessons.filter(l => l.type === 'TUT');
-        if(tuts.length > 0) {
-            const tutAttendance = this.calculateLabAndTutAttendance(students, tuts);
-            attendance.overallTut = tutAttendance.overall;
-            attendance.tutStudent = tutAttendance.perStudent;
-        }
-
-        this.calculateOverall(attendance);
-
-
-        return attendance;
-    }
-
-    calculateOverall(attendance) {
-        let counter = 0;
-        let sum = 0;
-        if(attendance.overallLec) {
-            sum += attendance.overallLec;
-            counter++;
-        }
-
-        if(attendance.overallLab) {
-            sum += attendance.overallLab;
-            counter++;
-        }
-
-        if(attendance.overallTut) {
-            sum += attendance.overallTut;
-            counter++;
-        }
-
-        attendance.overall = sum / counter;
-    }
-
-    calculateLectureAttendance(students, lessons) {
-        const attendance = {
-            overall: 0,
-            perStudent: [],
-        };
-        const totalLessons = lessons.length;
-        students.forEach(s => {
-            const lessonsAttended = lessons.filter(l => l.studentsAttended.indexOf(s) !== -1).length;
-            const percentage = ((lessonsAttended / totalLessons) * 100.0);
-            attendance.perStudent.push({id: s, attendance: percentage});
-        });
-
-        attendance.overall = this.getAverage(attendance.perStudent);
-        return attendance;
-    }
-
-    calculateLabAndTutAttendance(students, lessons) {
-        const attendance = {
-            overall: 0,
-            perStudent: [],
-        };
-
-        let lessonsCopy = [...lessons];
-        for(let i = 0; i < lessonsCopy.length; i++) {
-            let lesson = lessonsCopy.shift();
-            lessonsCopy = lessonsCopy.filter(l => !moment(lesson.date).isSame(moment(l.date), 'week'));
-            lessonsCopy.push(lesson)
-        }
-        const goalNumber = lessonsCopy.length; //You must have attended this many labs to get 100%, i.e. 1 a week.
-
-        //Attending two labs in one weeks will falsely push this number up...
-        students.forEach(s => {
-            const lessonsAttended = lessons.filter(l => l.studentsAttended.indexOf(s) !== -1).length;
-            let percentage = ((lessonsAttended / goalNumber) * 100.0);
-            if (percentage > 100) {
-                percentage = 100;
-            }
-            attendance.perStudent.push({id: s, attendance: percentage});
-        });
-
-        attendance.overall = this.getAverage(attendance.perStudent);
-        return attendance;
-    }
-
-    getAverage(perStudent) {
-        let sum = 0;
-        perStudent.forEach(s => {
-            sum += parseInt(s.attendance);
-        });
-        let average = sum / perStudent.length;
-        if(isNaN(average)) {
-            average = 100;
-        }
-        return average;
     }
 
     getColorClassName(percentage) {
