@@ -72,9 +72,6 @@ class Login extends Component {
                         <Col xs="6">
                           <button  color="primary" className="px-4">Login</button>
                         </Col>
-                        <Col xs="6" className="text-right">
-                          <Button color="link" className="px-0">Forgot password?</Button>
-                        </Col>
                       </Row>
                         <Row>
                             {this.state.errorMessage === '' ? null :

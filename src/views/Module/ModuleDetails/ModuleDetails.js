@@ -35,8 +35,6 @@ class ModuleDetails extends Component {
 
     getModules(id) {
         ModuleService.getModule(id).then(response => {
-            const today = new Date();
-            response.lessons = response.lessons.filter(lesson => new Date(lesson.date) <= today);
             const attendance = AttendanceCalculator.calculateOverallModuleAttendance(response.module.students, response.lessons);
 
             this.setState({
@@ -131,7 +129,7 @@ class ModuleDetails extends Component {
 
     getPercentageCell(percentage) {
         if(percentage === undefined) {
-            return <td>-</td>;
+            return;
         }
 
         return <td className={`table-${this.getColorClassName(percentage)}`}>{percentage.toFixed(0) + "%"}</td>;
@@ -211,6 +209,7 @@ class ModuleDetails extends Component {
                                 </Col>
                         }
                     </Row>
+                    <span>
                     <Table responsive striped hover bordered size="sm">
                         <thead>
                         <tr>
@@ -223,6 +222,7 @@ class ModuleDetails extends Component {
                         {this.createTableRows()}
                         </tbody>
                     </Table>
+                    </span>
                 </CardBody>
             </Card>
         )

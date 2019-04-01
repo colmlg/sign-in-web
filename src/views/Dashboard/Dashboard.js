@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Line} from 'react-chartjs-2';
+import React, { Component } from 'react';
+import { Line } from 'react-chartjs-2';
 import {
     Button,
     Card,
@@ -8,16 +8,59 @@ import {
     Col,
     Row,
 } from 'reactstrap';
-import {CustomTooltips} from '@coreui/coreui-plugin-chartjs-custom-tooltips';
-import {getStyle, hexToRgba} from '@coreui/coreui/dist/js/coreui-utilities'
-import AttendanceCalculator from "../../services/AttendanceCalculator";
-import ModuleService from "../../services/ModuleService";
-import moment from 'moment';
+import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
+import { getStyle, hexToRgba } from '@coreui/coreui/dist/js/coreui-utilities'
 
+const brandSuccess = getStyle('--success');
 const brandInfo = getStyle('--info');
+const brandDanger = getStyle('--danger');
 
+//Random Numbers
+function random(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+let elements = 27;
 let data1 = [];
+let data2 = [];
+let data3 = [];
 
+for (let i = 0; i <= elements; i++) {
+    data1.push(random(50, 200));
+    data2.push(random(80, 100));
+    data3.push(65);
+}
+
+const mainChart = {
+    labels: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'],
+    datasets: [
+        {
+            label: 'My First dataset',
+            backgroundColor: hexToRgba(brandInfo, 10),
+            borderColor: brandInfo,
+            pointHoverBackgroundColor: '#fff',
+            borderWidth: 2,
+            data: data1,
+        },
+        {
+            label: 'My Second dataset',
+            backgroundColor: 'transparent',
+            borderColor: brandSuccess,
+            pointHoverBackgroundColor: '#fff',
+            borderWidth: 2,
+            data: data2,
+        },
+        {
+            label: 'My Third dataset',
+            backgroundColor: 'transparent',
+            borderColor: brandDanger,
+            pointHoverBackgroundColor: '#fff',
+            borderWidth: 1,
+            borderDash: [8, 5],
+            data: data3,
+        },
+    ],
+};
 
 const mainChartOpts = {
     tooltips: {
@@ -26,7 +69,8 @@ const mainChartOpts = {
         intersect: true,
         mode: 'index',
         position: 'nearest',
-        callbacks: {}
+        callbacks: {
+        }
     },
     maintainAspectRatio: false,
     legend: {
@@ -44,8 +88,8 @@ const mainChartOpts = {
                 ticks: {
                     beginAtZero: true,
                     maxTicksLimit: 5,
-                    stepSize: 4,
-                    max: 20,
+                    stepSize: Math.ceil(250 / 5),
+                    max: 250,
                 },
             }],
     },
@@ -59,86 +103,56 @@ const mainChartOpts = {
     },
 };
 
-const mainChart = {
-    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-    datasets: [
-        {
-            label: 'Attendance / Day of Week',
-            backgroundColor: hexToRgba(brandInfo, 10),
-            borderColor: brandInfo,
-            pointHoverBackgroundColor: '#fff',
-            borderWidth: 2,
-            data: data1,
-        },
-    ],
-};
-
 class Dashboard extends Component {
     constructor(props) {
         super(props);
+
+        this.toggle = this.toggle.bind(this);
+        this.onRadioBtnClick = this.onRadioBtnClick.bind(this);
+
         this.state = {
-            chartOpts: mainChartOpts,
-            chartData: mainChart,
-        }
+            dropdownOpen: false,
+            radioSelected: 2,
+        };
     }
 
-    componentWillMount() {
-        this.getModule();
-    }
-
-    getModule() {
-        ModuleService.getModule("CS1231").then(response => {
-            const today = new Date();
-            response.lessons = response.lessons.filter(lesson => new Date(lesson.date) <= today);
-            const attendance = AttendanceCalculator.calculateOverallModuleAttendance(response.module.students, response.lessons);
-            this.makeChartData(attendance);
-        }).catch(error => {
-            alert(error);
+    toggle() {
+        this.setState({
+            dropdownOpen: !this.state.dropdownOpen,
         });
     }
 
-    makeChartData(attendanceData) {
-        const maxY = attendanceData.dayOfWeek.reduce((a, b) => Math.max(a, b)) + 5;
-        mainChartOpts.scales.yAxes[0].ticks.max = maxY;
-        mainChartOpts.scales.yAxes[0].ticks.stepSize = Math.ceil(maxY / 5);
-        const chartData = {
-            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-            datasets: [
-                {
-                    label: 'Attendance / Day of Week',
-                    backgroundColor: hexToRgba(brandInfo, 10),
-                    borderColor: brandInfo,
-                    pointHoverBackgroundColor: '#fff',
-                    borderWidth: 2,
-                    data: attendanceData.dayOfWeek,
-                },
-            ],
-        };
-        this.setState({chartOpts: mainChartOpts, chartData: chartData});
+    onRadioBtnClick(radioSelected) {
+        this.setState({
+            radioSelected: radioSelected,
+        });
     }
 
     render() {
 
         return (
-            <Row>
-                <Col>
-                    <Card>
-                        <CardBody>
-                            <Row>
-                                <Col>
-                                    <CardTitle>Attendance / Day of Week / Module</CardTitle>
-                                </Col>
-                                <Col>
-                                    <Button color="primary" className="float-right"><i className="icon-cloud-download"/></Button>
-                                </Col>
-                            </Row>
-                            <div className="chart-wrapper" style={{height: 300 + 'px', marginTop: 40 + 'px'}}>
-                                <Line data={this.state.chartData} options={this.state.chartOpts} height={300}/>
-                            </div>
-                        </CardBody>
-                    </Card>
-                </Col>
-            </Row>
+            <div className="animated fadeIn">
+                <Row>
+                    <Col>
+                        <Card>
+                            <CardBody>
+                                <Row>
+                                    <Col sm="5">
+                                        <CardTitle className="mb-0">Attendance By day Of Week</CardTitle>
+                                        <div className="small text-muted">March 2019</div>
+                                    </Col>
+                                    <Col sm="7" className="d-none d-sm-inline-block">
+                                        <Button color="primary" className="float-right"><i className="icon-cloud-download" /></Button>
+                                    </Col>
+                                </Row>
+                                <div className="chart-wrapper" style={{ height: 300 + 'px', marginTop: 40 + 'px' }}>
+                                    <Line data={mainChart} options={mainChartOpts} height={300} />
+                                </div>
+                            </CardBody>
+                        </Card>
+                    </Col>
+                </Row>
+            </div>
         );
     }
 }

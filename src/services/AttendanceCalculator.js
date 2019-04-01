@@ -126,7 +126,7 @@ class AttendanceCalculator {
         });
         let average = sum / perStudent.length;
         if(isNaN(average)) {
-            average = 100;
+            average = 0;
         }
         return average;
     }
