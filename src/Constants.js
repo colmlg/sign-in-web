@@ -1,3 +1,3 @@
 export default Object.freeze({
-    BACKEND_URL: "http://localhost.charlesproxy.com:3000"
+    BACKEND_URL: "http://cc0a850b.ngrok.io"
 });

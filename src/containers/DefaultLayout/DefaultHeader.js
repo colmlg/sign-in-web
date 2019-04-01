@@ -30,10 +30,11 @@ class DefaultHeader extends Component {
                 </Nav>
                 <Nav className="ml-auto" navbar>
                     <NavItem className="d-md-down-none">
+                        <span style={{marginRight: 20}}>{JSON.parse(localStorage.getItem('user')).id}</span>
                         <Button onClick={() => {
                             LoginService.logout();
                             window.location.reload(true);
-                        }} size="sm" color="primary">Log Out</Button>
+                        }} size="sm" color="primary" style={{marginRight: "20px"}}>Log Out</Button>
                     </NavItem>
                 </Nav>
             </React.Fragment>
